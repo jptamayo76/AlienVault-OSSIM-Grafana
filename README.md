@@ -67,6 +67,12 @@
 
 - The dashboard supports advanced filters: **Sensor and Period**.
 
+- Development and testing were carried out on the following platform:
+  | Server           | Version | 
+  |------------------|---------|
+  | AlienVault OSSIM | 5.8.19  |
+  | MariaDB          | 10.4.25 |
+
 
 
 ---
