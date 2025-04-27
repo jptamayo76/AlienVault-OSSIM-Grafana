@@ -32,17 +32,17 @@
 
 - If it doesn't exist, create one:
 
-  - Type: ``MySQL``
+  - **Type:** ``MySQL``
 
-  - Host: OSSIM server IP/DNS
+  - **Host:** OSSIM server IP/FQDN
 
-  - Database: ``alienvault``
+  - **Database:** ``alienvault``
 
-  - User: User with read permissions
+  - **User:** User with read permissions (**_grafana_**)
 
-  - Password: (Enter)
+  - **Password:** (**_SecurePassword_**)
 
-  - TLS: Configure as needed (optional).
+  - **TLS:** Configure as needed (optional).
 
 
 ### 3. Verify Dashboard Operation
@@ -94,6 +94,16 @@ FLUSH PRIVILEGES;
 
 ![image](https://github.com/user-attachments/assets/b63de30d-f0eb-477b-80af-5ebd396a7f95)
 
+
+---
+
+## Creating a MySQL data source that points to the OSSIM server
+
+![image](https://github.com/user-attachments/assets/9b9dd0b4-f634-4a4e-89dd-21b39c58a584)
+
+![image](https://github.com/user-attachments/assets/fb3e562f-e17d-4774-9d2d-bc1a46afb478)
+
+![image](https://github.com/user-attachments/assets/5ef70dd7-a840-4308-a6e3-fb35fc08a510)
 
 
 ---
