@@ -12,4 +12,49 @@ Grafana Dashboard for AlienVault OSSIM 5.8
 ![image](https://github.com/user-attachments/assets/396ec263-cb76-4504-ab95-506ce40c048d)
 
 
-WORK IN PROGRESS
+
+🔹 1. Import Dashboard
+Log in to Grafana.
+
+Go to Dashboards > Manage > Import.
+
+Select the OSSIM - All Sensors - Dynamic DS.json file.
+
+🔹 2. Select the Data Source
+Confirm that Grafana requests the OSSIM database as input.
+
+Select a MySQL data source that points to the OSSIM server.
+
+If it doesn't exist, create one:
+
+Type: MySQL
+
+Host: OSSIM server IP/DNS
+
+Database: alienvault
+
+User: User with read permissions
+
+Password: (Enter)
+
+TLS: Configure as needed (optional).
+
+🔹 3. Verify Dashboard Operation
+Verify that all dashboards load data correctly.
+
+Check for data source or SQL errors.
+
+Change the sensor_id or context_id filters and confirm that the graphs update dynamically.
+
+Check that the response times are reasonable. 🔹 4. Save and Make Available
+If everything works correctly, click Save Dashboard.
+
+Optional: Assign read-only permissions to the team users.
+
+🔹 5. Additional Notes
+The data source is dynamic; you can change it later if you migrate OSSIM or upgrade the database server.
+
+The dashboard supports advanced filters: Sensor, Client (Context), and Period.
+
+
+DOCUMENTATION WORK IN PROGRESS
