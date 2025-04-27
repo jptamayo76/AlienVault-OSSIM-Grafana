@@ -10,8 +10,5 @@ Grafana Dashboard for AlienVault OSSIM 5.8
 ![image](https://github.com/user-attachments/assets/8e92e812-bd9c-458b-ac76-39893f3319e1)
 
 
-![image](https://github.com/user-attachments/assets/bfd1ddc6-d3ad-496a-b216-30303c1e06fb)
-
-
 
 WORK IN PROGRESS
