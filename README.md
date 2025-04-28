@@ -3,15 +3,11 @@
 
 ![image](https://github.com/user-attachments/assets/4585da81-8f7f-4327-8e4a-0f9664e04f94)
 
-
 ![image](https://github.com/user-attachments/assets/5793b0ca-5892-4a48-ac7c-77739580ef41)
-
 
 ![image](https://github.com/user-attachments/assets/8e92e812-bd9c-458b-ac76-39893f3319e1)
 
 ![image](https://github.com/user-attachments/assets/396ec263-cb76-4504-ab95-506ce40c048d)
-
-
 
 ## Installation
 
@@ -19,7 +15,7 @@
   
 - Log in to Grafana.
 
-- Go to **Dashboards > Import**.
+- Go to **Home > Dashboards > New > Import**.
 
 - Select the ``AlienVault-OSSIM-BySensors.json`` file.
 
@@ -75,7 +71,7 @@
 
 ---
 
-## Creating a User to Access the AlienVault Database
+## Creating a User to access the AlienVault Database
 
 During the AlienVault OSSIM installation, we configured the password for the "root" administrator user of the Linux system, but not for the MySQL root user.
 
@@ -85,7 +81,7 @@ grep -A3 -B1 ^db_ /etc/ossim/ossim_setup.conf
 ~~~~
 ![image](https://github.com/user-attachments/assets/da4856d4-2cfd-4f6a-a5cd-8ca5ec5aa78f)
 
-To perform the tests I created the grafana user on the MariaDB server with the following queries:
+To perform the tests I created the grafana read-only user on the MariaDB server with the following queries:
 ~~~~
 CREATE USER 'grafana'@'my.grafana.server.ip' IDENTIFIED BY 'SecurePassword';
 GRANT SELECT ON alienvault.* TO 'grafana'@'my.grafana.server.ip';
@@ -99,11 +95,51 @@ FLUSH PRIVILEGES;
 
 ## Creating a MySQL data source that points to the OSSIM server
 
+- Go to **Home > Connections > Data sources**.
+- Press the **"Add new data source"** button
+- Choose a data source type: **SQL > MySQL**
+- Enter the correct values ​​for each item
+
 ![image](https://github.com/user-attachments/assets/9b9dd0b4-f634-4a4e-89dd-21b39c58a584)
 
 ![image](https://github.com/user-attachments/assets/fb3e562f-e17d-4774-9d2d-bc1a46afb478)
 
+- Press the **"Save & test"** button
+
 ![image](https://github.com/user-attachments/assets/5ef70dd7-a840-4308-a6e3-fb35fc08a510)
+
+- If the response message **"Database Connection OK"** is displayed, then we can already use the Dashboard.
+
+---
+
+## Importing the Dashboard
+
+- Go to **Home > Dashboards**.
+- Press the **New** button.
+- In the context menu that appears, select **Import**.
+
+  ![image](https://github.com/user-attachments/assets/ea01296c-bc86-4e07-a226-b3e74a54c6e2)
+
+- In the **Import dashboard** page, click on the **Import dashboard JSON file** box.
+
+  ![image](https://github.com/user-attachments/assets/12ef5888-a8c7-4307-a97b-c920145a1eb9)
+
+- A new window will appear to select the file to upload.
+- Find the ``AlienVault-OSSIM-BySensors.json`` file in the location where you downloaded it, select it, and press the **"Open"** button to begin uploading it to the Grafana server.
+- Confirm that Grafana requests the OSSIM database as input.
+
+  ![image](https://github.com/user-attachments/assets/5067ae7e-08cc-4111-a814-f0ae00d11e52)
+
+- Select the appropriate datasource for connection to the OSSIM database
+  
+  ![image](https://github.com/user-attachments/assets/0e8fff1e-5086-49a2-93a2-214daf33d48c)
+
+- Once the correct datasource has been configured, press the **Import** button.
+
+  ![image](https://github.com/user-attachments/assets/41181822-957b-41b9-ace2-2cbfcaebdfd1)
+
+- If everything went well, you should now be able to see all the Dashboard panels with information about potential attacks on your network.
+- Enjoy!
 
 
 ---
