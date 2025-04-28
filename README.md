@@ -142,7 +142,7 @@ FLUSH PRIVILEGES;
 
   ![image](https://github.com/user-attachments/assets/41181822-957b-41b9-ace2-2cbfcaebdfd1)
 
-- If everything went well, you should now be able to see all the Dashboard panels with information about potential attacks on your network.
+- If everything went well, you should now be able to see all the [Dashboard panels](#grafana-dashboard-for-alienvault-ossim-58) with information about potential attacks on your network.
 - Enjoy!
 
 
