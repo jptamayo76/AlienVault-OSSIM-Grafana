@@ -11,7 +11,7 @@
 
 ## Installation
 
-### 1. Import Dashboard
+### 1. [Import Dashboard](#importing-the-dashboard)
   
 - Log in to Grafana.
 
@@ -26,7 +26,7 @@
 
 - Select a **MySQL** data source that points to the OSSIM server.
 
-- If it doesn't exist, create one:
+- If it doesn't exist, [create one](#creating-a-mysql-data-source-that-points-to-the-ossim-server):
 
   - **Type:** ``MySQL``
 
@@ -34,7 +34,7 @@
 
   - **Database:** ``alienvault``
 
-  - **User:** User with read permissions (**_grafana_**)
+  - **User:** [User with read permissions](#creating-a-user-to-access-the-alienvault-database) (**_grafana_**)
 
   - **Password:** (**_SecurePassword_**)
 
@@ -91,6 +91,10 @@ FLUSH PRIVILEGES;
 ![image](https://github.com/user-attachments/assets/b63de30d-f0eb-477b-80af-5ebd396a7f95)
 
 
+> [!CAUTION]
+> The database user should only be granted SELECT permissions on the specified database & tables you want to query.
+**Grafana does _not validate_** that queries are safe so queries can contain any SQL statement. For example, statements like ``USE otherdb;`` and ``DROP TABLE user;`` would be executed.
+
 ---
 
 ## Creating a MySQL data source that points to the OSSIM server
@@ -143,7 +147,3 @@ FLUSH PRIVILEGES;
 
 
 ---
-
-
-> [!NOTE]
-> - [ ] DOCUMENTATION WORK IS IN PROGRESS
